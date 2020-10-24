@@ -12,14 +12,26 @@
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/PuttingOutFires_web.json", {onProgress: UnityProgress});
     </script>
   </head>
-  <body>
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">PuttingOutFires</div>
-      </div>
+
+  <body style="background-color: #0f0f0f">
+
+    <div class="container" align="center">
+
+        <div class="gameContainer">
+            <div class="webgl-content" style="margin-top: 200px;">
+                <div id="unityContainer" style="width: 960px; height: 600px"></div>
+                <div class="footer" style="background-color: #444444">
+                    <div class="webgl-logo"></div>
+                    <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+                    <div class="title" style="color: white;">PuttingOutFires</div>
+                </div>
+                <div class="leaderboard" style="margin-top: 20px; margin-bottom: 50px">
+                    <iframe src="https://script.google.com/macros/s/AKfycbwpjyx4lzY9HlKugo82_cWKGjTzMqp5pq2355UT5llPvSCry10/exec" scrolling="no" style="width: 960px; height: 600px; overflow: hidden;" title="Leaderboard"></iframe>
+                </div>
+            </div>
+        </div>
+
     </div>
+
   </body>
 </html>
