@@ -27,6 +27,20 @@
                 </div>
                 <div class="leaderboard" style="margin-top: 20px; margin-bottom: 50px">
                     <iframe src="https://script.google.com/macros/s/AKfycbwpjyx4lzY9HlKugo82_cWKGjTzMqp5pq2355UT5llPvSCry10/exec" scrolling="no" style="width: 960px; height: 600px; overflow: hidden;" title="Leaderboard"></iframe>
+                    <script>
+                        unityInstance.SendMessage("GameManager", "returnInfo", "returnPrefs");
+                        function handleMessage(event) {
+                           try {
+                              unityInstance.SendMessage("GameManager", "returnInfo", "returnPrefs");
+                              console.log(event);
+                              event.source.postMessage(userName, event.origin);
+						   } catch(err) {
+                              event.source.postMessage("Failed", event.origin);
+						   }
+                           
+                        }
+                        window.addEventListener("message", handleMessage);
+                    </script>
                 </div>
             </div>
         </div>
